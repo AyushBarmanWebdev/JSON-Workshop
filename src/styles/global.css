@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design System Colors */
+  --color-primary: #024ad8;
+  --color-primary-bright: #296ef9;
+  --color-primary-deep: #0e3191;
+  --color-primary-soft: #c9e0fc;
+  --color-on-primary: #ffffff;
+  
+  --color-ink: #1a1a1a;
+  --color-ink-deep: #000000;
+  --color-ink-soft: #292929;
+  --color-on-ink: #ffffff;
+  
+  --color-canvas: #ffffff;
+  --color-paper: #ffffff;
+  --color-cloud: #f7f7f7;
+  --color-fog: #e8e8e8;
+  --color-steel: #c2c2c2;
+  --color-graphite: #636363;
+  --color-charcoal: #3d3d3d;
+  --color-hairline: #e8e8e8;
+  --color-hairline-strong: #c2c2c2;
+  
+  --color-bloom-coral: #ff5050;
+  --color-bloom-rose: #f9d4d2;
+  --color-bloom-deep: #b3262b;
+  --color-bloom-wine: #5a1313;
+  
+  --color-error: #b3262b;
+
+  /* Typography Font (Using Manrope from Google Fonts as optical substitute for Forma DJR Micro) */
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+
+  /* Border Radii */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* Spacing Scale */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+  --spacing-section: 80px;
+
+  /* Shadows (Soft Lift from DESIGN.md) */
+  --shadow-soft-lift: 0 2px 8px rgba(26, 26, 26, 0.08);
+  --shadow-soft-lift-dark: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom developer base styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-y: auto; /* Allow scrolling for below-the-fold SEO content */
+}
+
+/* Dark Mode Theme overrides mapped to a simple .dark class selector */
+.dark {
+  --color-canvas: #0e0e10;
+  --color-paper: #18181c;
+  --color-cloud: #1f1f23;
+  --color-fog: #27272c;
+  --color-ink: #f7f7f7;
+  --color-ink-deep: #ffffff;
+  --color-ink-soft: #e8e8e8;
+  --color-steel: #3d3d3d;
+  --color-hairline: #2e2e34;
+  --color-hairline-strong: #3d3d3d;
+  --color-on-ink: #1a1a1a;
+  
+  color-scheme: dark;
+}
+
+/* Custom Scrollbars to match Vercel/Linear developer layout */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4d4d4d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Accessible hidden skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}

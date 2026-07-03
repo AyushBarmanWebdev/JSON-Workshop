@@ -1,11 +1,123 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Workspace from '../components/Workspace.astro';
+import SeoContent from '../components/SeoContent.astro';
+import Footer from '../components/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Workshop Formatter & Validator",
+  "url": "https://jsonworkshop.com",
+  "description": "A modern, high-performance, developer-focused JSON Formatter and Validator. Format, validate, minify, copy, and download JSON directly in your browser.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a JSON Formatter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A JSON Formatter is a developer utility that parses raw, minified, or unformatted JSON strings and structures them with clean indentation and spacing. This makes data hierarchies human-readable and easy for engineers to inspect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I validate JSON?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To validate JSON, copy and paste your code into our editor. The utility automatically parses the structure against RFC 8259 syntax specifications. If any syntax error exists (like trailing commas or unquoted keys), the validator instantly highlights the exact line and character location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my JSON invalid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common reasons for invalid JSON syntax include: using single quotes instead of double quotes for object keys or string elements, trailing commas at the end of objects/arrays, unquoted keys or names, or unescaped control character sequences inside strings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this JSON Formatter secure? Does my JSON leave my browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is 100% secure. All validation, formatting, and minification operations execute locally on your computer inside your web browser. No code payload is uploaded or sent to any backend servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between formatting and minifying JSON?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Formatting adds indentation (spaces or tabs) and line breaks to make JSON readable for humans. Minifying removes all unnecessary whitespace, comments, and line breaks to reduce the character payload size, optimizing it for network transfers and storage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remove whitespace from JSON?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To remove whitespace, paste your JSON into the input box and click the Minify button in the toolbar. The utility will parse the code and condense it into a single line, stripping all margins and spacing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upload JSON files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can import JSON files directly by clicking the Upload File button, or by dragging and dropping any .json file from your desktop directly onto the input editor area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because all editor dependencies are hosted locally in the project and all processing is client-side, the JSON Formatter functions completely offline once the page has loaded and cached."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to use JSON Formatter Chrome Extension?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To format JSON directly in Google Chrome, install extensions like 'JSON Viewer' from the Chrome Web Store, or install this web app directly as a Progressive Web App (PWA) on your device for instant offline access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to add JSON Formatter in Notepad++?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Notepad++, you can format JSON by installing the 'JSToolNpp' plugin via the Plugins Admin. Once installed, paste your JSON and press Ctrl+Alt+Shift+M or select 'JSON Format' from the JSTool menu."
+      }
+    }
+  ]
+};
+
+const pageSchemas = [webAppSchema, faqSchema];
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="JSON Formatter & Validator | JSON Workshop" 
+  description="A modern, high-performance, developer-focused JSON Formatter and Validator. Format, validate, minify, copy, and download JSON directly in your browser."
+  schemas={pageSchemas}
+>
+  <Navbar />
+  <Workspace />
+  <SeoContent />
+  <Footer />
 </Layout>
