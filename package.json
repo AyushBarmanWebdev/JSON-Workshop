@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postinstall": "node scripts/copy-monaco.js"
+    "postinstall": "node scripts/copy-monaco.js",
+    "deploy": "wrangler pages deploy dist/"
   },
   "dependencies": {
     "@monaco-editor/loader": "^1.7.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "monaco-editor": "^0.55.1",
-    "puppeteer-core": "^25.3.0"
+    "puppeteer-core": "^25.3.0",
+    "wrangler": "^4.107.0"
   }
 }
