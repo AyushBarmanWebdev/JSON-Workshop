@@ -26,6 +26,16 @@ const {
 		<meta name="theme-color" content="#4f46e5" />
 		<meta name="generator" content={Astro.generator} />
 		
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-KHDN4N5YQV" is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-KHDN4N5YQV');
+		</script>
+		
 		<!-- SEO -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
