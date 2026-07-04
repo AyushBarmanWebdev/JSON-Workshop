@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jsonworkshop.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Privacy Policy",
+      "item": "https://jsonworkshop.com/privacy-policy"
+    }
+  ]
+};
+
+const pageSchemas = [breadcrumbSchema];
+---
+
+<Layout 
+  title="Privacy Policy - JSON Workshop" 
+  description="Understand how JSON Workshop secures your data. 100% in-browser client-side calculations. Zero remote server logging."
+  schemas={pageSchemas}
+>
+  <Navbar />
+  
+  <main class="bg-canvas text-ink transition-colors duration-200 min-h-[calc(100vh-7rem)] flex flex-col justify-between" id="main-content">
+    <div class="max-w-4xl mx-auto px-6 py-12 space-y-12 w-full">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-xs text-charcoal/60 dark:text-graphite/60 select-none" aria-label="Breadcrumbs">
+        <ol class="flex items-center gap-1.5 list-none m-0 p-0">
+          <li>
+            <a href="/" class="hover:text-primary-bright hover:underline transition-colors">Home</a>
+          </li>
+          <li aria-hidden="true" class="text-hairline-strong">/</li>
+          <li class="text-charcoal dark:text-ink font-medium" aria-current="page">Privacy Policy</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <header class="space-y-4">
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-graphite">Legal & Privacy Safeguards</span>
+          <h1 class="font-sans font-medium text-4xl text-ink tracking-tight text-balance">
+            Privacy Policy
+          </h1>
+        </div>
+        <p class="font-sans text-xs text-graphite select-none">
+          Last Updated: July 4, 2026
+        </p>
+      </header>
+
+      <!-- Rationale Card (100% local guarantee) -->
+      <section class="bg-emerald-500/5 border border-emerald-500/20 p-6 rounded-lg space-y-3">
+        <h2 class="font-sans font-semibold text-base text-emerald-700 dark:text-emerald-400 flex items-center gap-2">
+          <span class="font-bold">✓</span>
+          Strict Local-Only Processing Guarantee
+        </h2>
+        <p class="text-xs text-charcoal leading-relaxed">
+          JSON Workshop operates strictly as a static frontend application. All JSON validation, formatting, minifying, and text calculations are computed locally inside your web browser’s JavaScript VM. <strong>No raw text, JSON code snippets, or configuration payloads are ever uploaded, transmitted, or logged to our servers or any third-party APIs.</strong>
+        </p>
+      </section>
+
+      <!-- Policy Grid Cards -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Policy segments">
+        
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            1. Data Storage & LocalStorage
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            JSON Workshop uses standard browser `localStorage` to save your configurations, such as your theme choice (light or dark mode) and your indentation layout settings. Your JSON code blocks are never stored locally after the browser session is closed, ensuring complete device safety.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            2. Cookies & Tracker Disclosures
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            We do not use tracking cookies or session identifiers on this platform. There are no advertising pixel trackers or behavior monitoring tools integrated. Access to JSON Workshop remains completely anonymous, requiring no register forms or user sign-ups.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            3. Future Advertising & AdSense
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            To keep this developer utility 100% free, we may integrate Google AdSense in the future. Google uses cookies (such as the DART cookie) to serve contextual ads based on visits. You can opt out of personalized ads by visiting Google Ad Settings at any time.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            4. Analytics & Server Logs
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            We collect anonymized static visitor statistics (such as pageview counts and browser user agents) to improve platform responsiveness and load speeds. These metrics are processed without linking to individual IP addresses or client identifiers.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- User Rights and Contact -->
+      <section class="space-y-4" aria-labelledby="section-rights">
+        <h2 id="section-rights" class="font-sans font-medium text-xl text-ink tracking-tight">
+          Your Rights & Contact Information
+        </h2>
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-4 text-xs text-charcoal">
+          <p class="leading-relaxed">
+            Since we collect no user emails, profiles, or personal inputs, we do not maintain personal databases. Under global regulations (such as GDPR and CCPA), your data is securely isolated on your own machine.
+          </p>
+          <p class="leading-relaxed">
+            If you have questions regarding our privacy rules, local storage policies, or security implementations, please contact us directly at <a href="mailto:privacy@jsonworkshop.com" class="text-primary hover:underline font-semibold">privacy@jsonworkshop.com</a> or use the form on our <a href="/contact" class="text-primary hover:underline font-semibold">Contact Page</a>.
+          </p>
+        </div>
+      </section>
+
+    </div>
+    <Footer />
+  </main>
+</Layout>

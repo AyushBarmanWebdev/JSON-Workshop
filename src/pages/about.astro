@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About JSON Workshop",
+  "description": "Learn about the mission, values, open-source technology stack, and offline client-side privacy philosophy of JSON Workshop.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "JSON Workshop",
+    "url": "https://jsonworkshop.com",
+    "logo": "https://jsonworkshop.com/favicon.svg"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jsonworkshop.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://jsonworkshop.com/about"
+    }
+  ]
+};
+
+const pageSchemas = [aboutPageSchema, breadcrumbSchema];
+---
+
+<Layout 
+  title="About JSON Workshop - Privacy-First Development Tools" 
+  description="Learn about JSON Workshop's mission, values, open-source technology stack, and client-side privacy roadmap."
+  schemas={pageSchemas}
+>
+  <Navbar />
+  
+  <main class="bg-canvas text-ink transition-colors duration-200 min-h-[calc(100vh-7rem)] flex flex-col justify-between" id="main-content">
+    <div class="max-w-4xl mx-auto px-6 py-12 space-y-16 w-full">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-xs text-charcoal/60 dark:text-graphite/60 select-none" aria-label="Breadcrumbs">
+        <ol class="flex items-center gap-1.5 list-none m-0 p-0">
+          <li>
+            <a href="/" class="hover:text-primary-bright hover:underline transition-colors">Home</a>
+          </li>
+          <li aria-hidden="true" class="text-hairline-strong">/</li>
+          <li class="text-charcoal dark:text-ink font-medium" aria-current="page">About</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <header class="space-y-4">
+        <h1 class="font-sans font-medium text-4xl text-ink tracking-tight text-balance">
+          Developer Utilities, Reimagined
+        </h1>
+        <p class="font-sans text-md text-charcoal leading-relaxed max-w-2xl text-pretty">
+          JSON Workshop exists to solve a simple problem: providing high-performance, IDE-grade developer utilities that respect your privacy by default. Everything runs locally in your browser. Your data never leaves your device.
+        </p>
+      </header>
+
+      <!-- Mission & Core Values Section -->
+      <section class="space-y-6" aria-labelledby="section-values">
+        <h2 id="section-values" class="font-sans font-medium text-2xl text-ink tracking-tight">
+          Mission & Core Values
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm hover:border-primary-bright/20 transition-all duration-200">
+            <h3 class="font-sans font-semibold text-base text-ink">
+              1. 100% Client-Side
+            </h3>
+            <p class="text-xs text-graphite leading-relaxed">
+              We believe your configurations are private. All parsing, linting, formatting, and minification operations happen exclusively inside your browser VM. No network uploads, no storage databases.
+            </p>
+          </div>
+          <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm hover:border-primary-bright/20 transition-all duration-200">
+            <h3 class="font-sans font-semibold text-base text-ink">
+              2. IDE Ergonomics
+            </h3>
+            <p class="text-xs text-graphite leading-relaxed">
+              We don't settle for basic textarea edits. By integrating the Monaco Editor, we provide developers with auto-completion, color brackets matching, and click-to-jump error markers.
+            </p>
+          </div>
+          <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm hover:border-primary-bright/20 transition-all duration-200">
+            <h3 class="font-sans font-semibold text-base text-ink">
+              3. Frictionless & Free
+            </h3>
+            <p class="text-xs text-graphite leading-relaxed">
+              No logins, no cookies popups, no premium paywalls. JSON Workshop is built to be a simple URL you bookmark and access instantly, online or offline, whenever you need it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="space-y-6" aria-labelledby="section-tech">
+        <h2 id="section-tech" class="font-sans font-medium text-2xl text-ink tracking-tight">
+          Built on Modern Standards
+        </h2>
+        <div class="bg-paper border border-hairline p-8 rounded-lg space-y-6">
+          <p class="text-sm text-charcoal leading-relaxed max-w-3xl">
+            JSON Workshop is designed to combine the load speed of static websites with the raw processing speed of desktop client apps. Our stack is compiled to prioritize performance and accessibility:
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-semibold text-charcoal">
+            <div class="border border-hairline p-4 rounded bg-cloud flex flex-col justify-between h-20">
+              <span class="text-graphite">FRAMEWORK</span>
+              <span>Astro 5 (Static HTML)</span>
+            </div>
+            <div class="border border-hairline p-4 rounded bg-cloud flex flex-col justify-between h-20">
+              <span class="text-graphite">EDITOR ENGINE</span>
+              <span>Monaco Editor (Local)</span>
+            </div>
+            <div class="border border-hairline p-4 rounded bg-cloud flex flex-col justify-between h-20">
+              <span class="text-graphite">STYLING ENGINE</span>
+              <span>Tailwind CSS v4</span>
+            </div>
+            <div class="border border-hairline p-4 rounded bg-cloud flex flex-col justify-between h-20">
+              <span class="text-graphite">COMPILER ENGINE</span>
+              <span>V8 Native JS Engine</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Roadmap -->
+      <section class="space-y-6" aria-labelledby="section-roadmap">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <h2 id="section-roadmap" class="font-sans font-medium text-2xl text-ink tracking-tight">
+            Development Roadmap
+          </h2>
+          <span class="text-[10px] uppercase font-bold tracking-wider text-primary bg-primary-soft/10 border border-primary-soft/20 px-2 py-0.5 rounded">Current: V1.0 Stable</span>
+        </div>
+        <div class="border border-hairline rounded-lg overflow-hidden divide-y divide-hairline bg-paper">
+          <div class="p-5 flex items-center justify-between gap-4 text-sm">
+            <div class="space-y-1">
+              <span class="font-semibold text-ink">Phase 1: High-Density Formatter</span>
+              <p class="text-xs text-graphite">Offline Monaco Editor, live parsing, cursor jump warnings, drag-and-drop loading support.</p>
+            </div>
+            <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5 px-2.5 py-1 rounded border border-emerald-500/20 shrink-0">Shipped</span>
+          </div>
+          <div class="p-5 flex items-center justify-between gap-4 text-sm">
+            <div class="space-y-1">
+              <span class="font-semibold text-ink">Phase 2: Platform MPA Integration</span>
+              <p class="text-xs text-graphite">SEO-optimized pages, metadata structures, and dark/light high-contrast variables polish.</p>
+            </div>
+            <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5 px-2.5 py-1 rounded border border-emerald-500/20 shrink-0">Shipped</span>
+          </div>
+          <div class="p-5 flex items-center justify-between gap-4 text-sm">
+            <div class="space-y-1">
+              <span class="font-semibold text-ink">Phase 3: Visual JSON Diff Engine</span>
+              <p class="text-xs text-graphite">Side-by-side semantic diff comparison showing added, modified, and deleted properties.</p>
+            </div>
+            <span class="text-xs font-bold text-primary bg-primary-soft/10 px-2.5 py-1 rounded border border-primary-bright/20 shrink-0">Soon</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Footer Section -->
+      <section class="border border-hairline rounded-lg bg-cloud p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-1.5">
+          <h3 class="font-sans font-semibold text-lg text-ink">
+            Have a feature request or found a bug?
+          </h3>
+          <p class="text-xs text-graphite max-w-xl">
+            We are constantly improving our tool suite. Let us know how we can make JSON Workshop more useful for your daily engineering tasks.
+          </p>
+        </div>
+        <a 
+          href="/contact" 
+          class="bg-primary hover:bg-primary-bright active:bg-primary-deep text-on-primary font-bold text-xs tracking-wider uppercase px-5 py-3 rounded-md cursor-pointer transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary-bright focus-visible:outline-none shrink-0"
+        >
+          Contact Support
+        </a>
+      </section>
+
+    </div>
+    <Footer />
+  </main>
+</Layout>

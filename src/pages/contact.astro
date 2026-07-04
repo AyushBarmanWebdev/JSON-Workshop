@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact JSON Workshop",
+  "description": "Get in touch with the JSON Workshop development team to submit bug reports, feature requests, or general inquiries.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "JSON Workshop",
+    "url": "https://jsonworkshop.com"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jsonworkshop.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://jsonworkshop.com/contact"
+    }
+  ]
+};
+
+const pageSchemas = [contactPageSchema, breadcrumbSchema];
+---
+
+<Layout 
+  title="Contact Us - Developer Feedback & Inquiries | JSON Workshop" 
+  description="Get in touch with the JSON Workshop team. Report editor bugs, request utility features, or send general inquiries."
+  schemas={pageSchemas}
+>
+  <Navbar />
+  
+  <main class="bg-canvas text-ink transition-colors duration-200 min-h-[calc(100vh-7rem)] flex flex-col justify-between" id="main-content">
+    <div class="max-w-4xl mx-auto px-6 py-12 space-y-12 w-full">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-xs text-charcoal/60 dark:text-graphite/60 select-none" aria-label="Breadcrumbs">
+        <ol class="flex items-center gap-1.5 list-none m-0 p-0">
+          <li>
+            <a href="/" class="hover:text-primary-bright hover:underline transition-colors">Home</a>
+          </li>
+          <li aria-hidden="true" class="text-hairline-strong">/</li>
+          <li class="text-charcoal dark:text-ink font-medium" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <header class="space-y-4">
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-primary">Developer Feedback Channel</span>
+          <h1 class="font-sans font-medium text-4xl text-ink tracking-tight text-balance">
+            Get in Touch
+          </h1>
+        </div>
+        <p class="font-sans text-md text-charcoal leading-relaxed max-w-2xl text-pretty">
+          Whether you want to report an editor bug, suggest a new formatting module, request custom validation schemas, or make a business inquiry, we'd love to hear from you.
+        </p>
+      </header>
+
+      <!-- Grid layout: Form (Left) & Channel Cards (Right) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Form Block (span-2) -->
+        <section class="md:col-span-2 space-y-6" aria-labelledby="form-title">
+          <div class="bg-paper border border-hairline p-8 rounded-lg space-y-6 shadow-sm">
+            <h2 id="form-title" class="font-sans font-semibold text-lg text-ink">
+              Send Us a Message
+            </h2>
+            
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Feedback submission is simulated successfully!');">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="contact-name" class="text-xs font-semibold text-charcoal">Name</label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    required 
+                    placeholder="Enter your name" 
+                    class="w-full bg-cloud border border-hairline px-3.5 py-2 rounded text-sm text-ink outline-none transition-colors duration-150 focus:border-primary-bright focus:bg-paper"
+                  />
+                </div>
+                
+                <div class="space-y-1.5">
+                  <label for="contact-email" class="text-xs font-semibold text-charcoal">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    required 
+                    placeholder="you@domain.com" 
+                    class="w-full bg-cloud border border-hairline px-3.5 py-2 rounded text-sm text-ink outline-none transition-colors duration-150 focus:border-primary-bright focus:bg-paper"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-subject" class="text-xs font-semibold text-charcoal">Subject</label>
+                <select 
+                  id="contact-subject" 
+                  class="w-full bg-cloud border border-hairline px-3 py-2 rounded text-sm text-ink outline-none cursor-pointer transition-colors duration-150 focus:border-primary-bright focus:bg-paper"
+                >
+                  <option value="bug">Report a Bug / Parser Issue</option>
+                  <option value="feature">Request a Feature / Tool</option>
+                  <option value="business">Business / Advertising Inquiry</option>
+                  <option value="other">General Feedback / Inquiries</option>
+                </select>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-message" class="text-xs font-semibold text-charcoal">Message</label>
+                <textarea 
+                  id="contact-message" 
+                  required 
+                  rows="5" 
+                  placeholder="How can we help you?" 
+                  class="w-full bg-cloud border border-hairline px-3.5 py-2 rounded text-sm text-ink outline-none transition-colors duration-150 focus:border-primary-bright focus:bg-paper resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full bg-primary hover:bg-primary-bright active:bg-primary-deep text-on-primary font-bold text-xs tracking-wider uppercase px-4 py-2.5 h-10 rounded-md cursor-pointer transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary-bright focus-visible:outline-none flex items-center justify-center"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Sidebar Channels (span-1) -->
+        <aside class="space-y-6" aria-label="Support Channels">
+          
+          <div class="bg-paper border border-hairline p-6 rounded-lg space-y-4 shadow-sm">
+            <h3 class="font-sans font-semibold text-sm text-ink">
+              Direct Communication
+            </h3>
+            
+            <div class="space-y-3 text-xs">
+              <div class="space-y-1">
+                <span class="text-graphite font-medium">EMAIL INQUIRIES</span>
+                <p>
+                  <a href="mailto:support@jsonworkshop.com" class="text-primary hover:underline font-semibold">support@jsonworkshop.com</a>
+                </p>
+              </div>
+              <div class="space-y-1">
+                <span class="text-graphite font-medium">GITHUB CODE REPO</span>
+                <p>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-semibold">JSON Workshop Org</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-paper border border-hairline p-6 rounded-lg space-y-4 shadow-sm">
+            <h3 class="font-sans font-semibold text-sm text-ink">
+              Response Thresholds
+            </h3>
+            <div class="space-y-2 text-xs text-charcoal leading-relaxed">
+              <p>
+                <strong>Bug Reports:</strong> Investigated within 24-48 hours. Fixes deployed directly to V1 stable output branches.
+              </p>
+              <p>
+                <strong>Feature Requests:</strong> Reviewed during platform roadmap assessments (every two weeks).
+              </p>
+              <p>
+                <strong>Support Privacy:</strong> Form data is used exclusively to answer your request. We never sell support emails.
+              </p>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+    <Footer />
+  </main>
+</Layout>

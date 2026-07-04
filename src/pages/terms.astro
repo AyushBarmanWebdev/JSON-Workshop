@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jsonworkshop.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Terms & Conditions",
+      "item": "https://jsonworkshop.com/terms"
+    }
+  ]
+};
+
+const pageSchemas = [breadcrumbSchema];
+---
+
+<Layout 
+  title="Terms and Conditions - JSON Workshop" 
+  description="Read the Terms of Service for using JSON Workshop's free developer utilities."
+  schemas={pageSchemas}
+>
+  <Navbar />
+  
+  <main class="bg-canvas text-ink transition-colors duration-200 min-h-[calc(100vh-7rem)] flex flex-col justify-between" id="main-content">
+    <div class="max-w-4xl mx-auto px-6 py-12 space-y-12 w-full">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="text-xs text-charcoal/60 dark:text-graphite/60 select-none" aria-label="Breadcrumbs">
+        <ol class="flex items-center gap-1.5 list-none m-0 p-0">
+          <li>
+            <a href="/" class="hover:text-primary-bright hover:underline transition-colors">Home</a>
+          </li>
+          <li aria-hidden="true" class="text-hairline-strong">/</li>
+          <li class="text-charcoal dark:text-ink font-medium" aria-current="page">Terms & Conditions</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Header -->
+      <header class="space-y-4">
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-graphite">Platform Usage Rules</span>
+          <h1 class="font-sans font-medium text-4xl text-ink tracking-tight text-balance">
+            Terms & Conditions
+          </h1>
+        </div>
+        <p class="font-sans text-xs text-graphite select-none">
+          Last Updated: July 4, 2026
+        </p>
+      </header>
+
+      <!-- Terms Grid Cards -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Terms segments">
+        
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            1. Acceptance of Terms
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            By accessing or using the JSON Workshop website, tools, and services, you agree to comply with and be bound by these Terms & Conditions. If you do not agree to these rules, you may not access or use our developer utility suite.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            2. Permitted Use of Service
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            This platform is provided for formatting, validating, and minifying JSON data. You are permitted to use this tool for personal, educational, or commercial software engineering purposes, provided that your use does not cause service degradation.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            3. Future Paid Capabilities
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            While our core formatting, validation, and minifying tools will always remain 100% free, we reserve the right to introduce advanced paid features, server-side integrations, or cloud workspace syncing options in the future.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            4. Service Disclaimers
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            JSON Workshop is provided "as is" and "as available" without any warranties, express or implied. We do not guarantee that the tool will be uninterrupted, error-free, or compatible with corrupted or malformed data packets.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            5. Intellectual Property
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            The brand logo, visual components, code formatting logic, and custom styles of JSON Workshop are owned by the project. The raw JSON code strings you paste, import, or compile remain your own intellectual property.
+          </p>
+        </div>
+
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-3 shadow-sm">
+          <h3 class="font-sans font-semibold text-base text-ink">
+            6. Prohibited Operations
+          </h3>
+          <p class="text-xs text-graphite leading-relaxed">
+            You agree not to bypass, disable, or interfere with security features of the website, script engines, or local storage structures, or use automated scrapers or DDOS scripts that degrade platform performance.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- Limitation of Liability -->
+      <section class="space-y-4" aria-labelledby="section-liability">
+        <h2 id="section-liability" class="font-sans font-medium text-xl text-ink tracking-tight">
+          Limitation of Liability
+        </h2>
+        <div class="bg-paper border border-hairline p-6 rounded-lg space-y-4 text-xs text-charcoal">
+          <p class="leading-relaxed">
+            In no event shall JSON Workshop, its maintainers, or its partners be liable for any direct, indirect, incidental, special, or consequential damages (including, but not limited to, loss of data, loss of profits, system downtime, or code compilation errors) arising out of the use of or inability to use this platform.
+          </p>
+          <p class="leading-relaxed">
+            We reserve the right to modify these terms or terminate access to any features without prior notice. If you have questions regarding these terms, please reach out via our email at <a href="mailto:terms@jsonworkshop.com" class="text-primary hover:underline font-semibold">terms@jsonworkshop.com</a> or view details on our <a href="/about" class="text-primary hover:underline font-semibold">About Page</a>.
+          </p>
+        </div>
+      </section>
+
+    </div>
+    <Footer />
+  </main>
+</Layout>
