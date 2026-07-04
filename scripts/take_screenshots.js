@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -43,7 +43,7 @@ async function takeScreenshots() {
 
   const browser = await puppeteer.launch({ 
     headless: true,
-    executablePath: path.join(process.env.USERPROFILE, '.cache', 'puppeteer', 'chrome', 'win64-150.0.7871.24', 'chrome-win64', 'chrome.exe')
+    executablePath: 'C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe'
   });
   const page = await browser.newPage();
 
