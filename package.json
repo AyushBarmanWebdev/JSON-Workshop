@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "postinstall": "node scripts/copy-monaco.js",
-    "deploy": "wrangler pages deploy dist/ --project-name json-workshop"
+    "deploy": "npm run build && wrangler pages deploy dist/ --project-name json-workshop"
   },
   "dependencies": {
     "@monaco-editor/loader": "^1.7.0",
