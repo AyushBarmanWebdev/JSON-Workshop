@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Internal Server Error (500) - JSON Workshop" 
+  description="An unexpected server error occurred. Return to JSON Workshop to format and validate your JSON data."
+  robots="noindex, nofollow"
+>
+  <Navbar />
+  
+  <main class="bg-canvas text-ink transition-colors duration-200 min-h-[calc(100vh-7rem)] flex flex-col justify-between" id="main-content">
+    <div class="max-w-4xl mx-auto px-6 py-16 flex flex-col items-center justify-center space-y-8 w-full flex-grow">
+      
+      <!-- Big bracket indicator -->
+      <div class="text-error font-bold text-6xl tracking-tight select-none animate-pulse">
+        {`{ 500 }`}
+      </div>
+
+      <header class="text-center space-y-2 w-full">
+        <h1 class="font-sans font-medium text-3xl text-ink tracking-tight">
+          Internal Server Error
+        </h1>
+        <p class="font-sans text-sm text-charcoal max-w-md mx-auto leading-relaxed">
+          An unexpected server exception occurred during compilation. Our team has been notified. Please try again shortly or return home.
+        </p>
+      </header>
+
+      <!-- Terminal Console Window Mockup -->
+      <div class="w-full max-w-md bg-paper border border-hairline rounded-lg overflow-hidden shadow-md">
+        <!-- Terminal Header -->
+        <div class="bg-cloud border-b border-hairline px-4 py-2 flex items-center justify-between select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-bloom-coral inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-steel inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+          </div>
+          <span class="text-[10px] font-bold text-graphite uppercase tracking-wider font-mono">console.sh</span>
+          <div class="w-10"></div>
+        </div>
+        
+        <!-- Terminal Body -->
+        <div class="p-6 font-mono text-xs text-left space-y-3 bg-paper">
+          <div class="flex items-center gap-2">
+            <span class="text-primary-bright font-bold select-none">&gt;</span>
+            <span class="text-ink">npm run build --prod</span>
+          </div>
+          <div class="space-y-1 pl-4 text-graphite">
+            <p class="text-bloom-deep font-semibold">HTTP/1.1 500 Internal Server Error</p>
+            <p>Status: CompileException</p>
+            <p>Source: ServerVMContext</p>
+            <p>Error-ID: <span class="text-charcoal font-semibold">ERR_INTERNAL_COMPILER_CRASH</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <a 
+        href="/" 
+        class="bg-primary hover:bg-primary-bright active:bg-primary-deep text-on-primary font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-md cursor-pointer transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary-bright focus-visible:outline-none flex items-center gap-2 shadow-sm"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Return to Formatter
+      </a>
+
+    </div>
+    <Footer />
+  </main>
+</Layout>

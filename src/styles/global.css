@@ -7,12 +7,12 @@
   --color-primary-deep: #0e3191;
   --color-primary-soft: #c9e0fc;
   --color-on-primary: #ffffff;
-  
+
   --color-ink: #1a1a1a;
   --color-ink-deep: #000000;
   --color-ink-soft: #292929;
   --color-on-ink: #ffffff;
-  
+
   --color-canvas: #ffffff;
   --color-paper: #ffffff;
   --color-cloud: #f7f7f7;
@@ -22,12 +22,12 @@
   --color-charcoal: #3d3d3d;
   --color-hairline: #e8e8e8;
   --color-hairline-strong: #c2c2c2;
-  
+
   --color-bloom-coral: #ff5050;
   --color-bloom-rose: #f9d4d2;
   --color-bloom-deep: #b3262b;
   --color-bloom-wine: #5a1313;
-  
+
   --color-error: #b3262b;
 
   /* Typography Font (Using Manrope from Google Fonts as optical substitute for Forma DJR Micro) */
@@ -55,6 +55,13 @@
   /* Shadows (Soft Lift from DESIGN.md) */
   --shadow-soft-lift: 0 2px 8px rgba(26, 26, 26, 0.08);
   --shadow-soft-lift-dark: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  /* Max-Width Scales to prevent spacing key overlap collisions */
+  --max-width-xs: 20rem;
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-lg: 32rem;
+  --max-width-xl: 36rem;
 }
 
 /* Custom developer base styles */
@@ -68,7 +75,8 @@ body {
   height: 100%;
   width: 100%;
   transition: background-color 0.2s ease, color 0.2s ease;
-  overflow-y: auto; /* Allow scrolling for below-the-fold SEO content */
+  overflow-y: auto;
+  /* Allow scrolling for below-the-fold SEO content */
 }
 
 /* Dark Mode Theme overrides mapped to a simple .dark class selector */
@@ -86,7 +94,7 @@ body {
   --color-hairline: #2e2e34;
   --color-hairline-strong: #3d3d3d;
   --color-on-ink: #1a1a1a;
-  
+
   color-scheme: dark;
 }
 
@@ -129,6 +137,7 @@ body {
   z-index: 100;
   transition: top 0.2s;
 }
+
 .skip-link:focus {
   top: 0;
 }

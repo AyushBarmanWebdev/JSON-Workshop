@@ -5,12 +5,14 @@ interface Props {
 	title?: string;
 	description?: string;
 	schemas?: object[];
+	robots?: string;
 }
 
 const {
 	title = "JSON Formatter & Validator | JSON Workshop",
 	description = "A fast, beautiful, and accessible JSON Formatter and Validator for developers. Format, validate, and minify JSON instantly.",
-	schemas = []
+	schemas = [],
+	robots
 } = Astro.props;
 ---
 
@@ -27,6 +29,7 @@ const {
 		<!-- SEO -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		{robots && <meta name="robots" content={robots} />}
 		<link rel="canonical" href={Astro.url.href} />
 		
 		<!-- Open Graph / Facebook -->
