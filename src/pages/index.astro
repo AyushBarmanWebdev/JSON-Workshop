@@ -101,11 +101,19 @@ const faqSchema = {
   ]
 };
 
-const pageSchemas = [webAppSchema, faqSchema];
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "JSON Workshop",
+  "alternateName": "JSON Workshop",
+  "url": "https://jsonworkshop.com"
+};
+
+const pageSchemas = [websiteSchema, webAppSchema, faqSchema];
 ---
 
 <Layout 
-  title="JSON Formatter & Validator - Free Online JSON Formatter" 
+  title="JSON Formatter & Validator | JSON Workshop" 
   description="Free JSON Formatter and Validator online. Pretty print, parse, format, validate, and minify your JSON data instantly. 100% private client-side processing."
   schemas={pageSchemas}
 >
