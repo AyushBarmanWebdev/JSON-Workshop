@@ -105,11 +105,19 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "JSON Workshop",
-  "alternateName": "JSON Workshop",
+  "alternateName": ["JSONWorkshop", "JW"],
   "url": "https://jsonworkshop.com"
 };
 
-const pageSchemas = [websiteSchema, webAppSchema, faqSchema];
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "JSON Workshop",
+  "url": "https://jsonworkshop.com",
+  "logo": "https://jsonworkshop.com/favicon.svg"
+};
+
+const pageSchemas = [websiteSchema, organizationSchema, webAppSchema, faqSchema];
 ---
 
 <Layout 
