@@ -142,3 +142,147 @@ body {
 .skip-link:focus {
   top: 0;
 }
+
+/* Explicit Typography (Prose) Styling for Article Visibility in Light & Dark Modes */
+.prose {
+  --tw-prose-body: #334155;
+  --tw-prose-headings: #0f172a;
+  --tw-prose-lead: #475569;
+  --tw-prose-links: #024ad8;
+  --tw-prose-bold: #0f172a;
+  --tw-prose-counters: #0f172a;
+  --tw-prose-bullets: #334155;
+  --tw-prose-hr: #e2e8f0;
+  --tw-prose-quotes: #0f172a;
+  --tw-prose-quote-borders: #cbd5e1;
+  --tw-prose-captions: #64748b;
+  --tw-prose-code: #0f172a;
+  --tw-prose-pre-code: #f8fafc;
+  --tw-prose-pre-bg: #0f172a;
+  --tw-prose-th-borders: #cbd5e1;
+  --tw-prose-td-borders: #e2e8f0;
+  color: #334155 !important;
+}
+
+.prose p {
+  color: #334155 !important;
+}
+
+.prose strong,
+.prose b {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.prose ol > li,
+.prose ul > li {
+  color: #334155 !important;
+}
+
+.prose ol > li::marker,
+.prose ul > li::marker {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.prose code {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 0.25rem !important;
+  font-weight: 600 !important;
+}
+
+.prose a {
+  color: #024ad8 !important;
+  text-decoration: underline !important;
+}
+
+.prose table {
+  width: 100%;
+}
+
+.prose th {
+  color: #0f172a !important;
+  background-color: #f8fafc !important;
+}
+
+.prose td {
+  color: #334155 !important;
+}
+
+/* Dark Mode Prose Overrides */
+.dark .prose {
+  --tw-prose-body: #cbd5e1;
+  --tw-prose-headings: #f8fafc;
+  --tw-prose-lead: #94a3b8;
+  --tw-prose-links: #60a5fa;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-counters: #38bdf8;
+  --tw-prose-bullets: #64748b;
+  --tw-prose-hr: #334155;
+  --tw-prose-quotes: #f8fafc;
+  --tw-prose-quote-borders: #334155;
+  --tw-prose-captions: #94a3b8;
+  --tw-prose-code: #f1f5f9;
+  --tw-prose-pre-code: #f8fafc;
+  --tw-prose-pre-bg: #1e293b;
+  --tw-prose-th-borders: #334155;
+  --tw-prose-td-borders: #1e293b;
+  color: #cbd5e1 !important;
+}
+
+.dark .prose p {
+  color: #cbd5e1 !important;
+}
+
+.dark .prose strong,
+.dark .prose b {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+  color: #f8fafc !important;
+  font-weight: 700 !important;
+}
+
+.dark .prose ol > li,
+.dark .prose ul > li {
+  color: #cbd5e1 !important;
+}
+
+.dark .prose ol > li::marker,
+.dark .prose ul > li::marker {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+}
+
+.dark .prose code {
+  color: #f8fafc !important;
+  background-color: #1e293b !important;
+}
+
+.dark .prose a {
+  color: #60a5fa !important;
+}
+
+.dark .prose th {
+  color: #f8fafc !important;
+  background-color: #1e293b !important;
+}
+
+.dark .prose td {
+  color: #cbd5e1 !important;
+}
